@@ -2,18 +2,20 @@ package com.example.demo.util;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+//import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.util.Date;
+//import java.util.function.Function;
 
 @Component
 public class JwtUtil {
     
                                             // 256 byte 이상
     private static final String SECRET_KEY = "mysecretkeymysecretkeymysecretkeymysecretkey";
-
     private final Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+    //private final long expirationMs;
 
     // JWT 토큰 생성
     public String generateToken(String username) {
