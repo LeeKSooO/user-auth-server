@@ -19,7 +19,7 @@ public class SecurityConfig {
         return http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/login", "/api/signup").permitAll() // 로그인, 회원가입은 허용
+                .requestMatchers("/api/user/login", "/api/user/signup").permitAll() // 로그인, 회원가입은 허용
                 .anyRequest().authenticated() // 나머지는 인증 필요
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // 필터 등록
