@@ -60,6 +60,18 @@ public class UserController {
         return ResponseEntity.ok("Password changed successfully");
     }
 
+    // 로그아웃
+    /* 
+    @DeleteMapping("/logout")
+    public ResponseEntity<Void> logout(@RequestHeader("Authorization") String bearerToken) {
+        
+        String rt = extractRefreshFrom(bearer);
+        tokenService.deleteRefreshToken(rt); //  DB/Redis에서 삭제
+        return ResponseEntity.noContent().build();
+        
+        // 204 No Content
+    }
+    */
 
 
     // 내 정보 조회2
