@@ -15,7 +15,7 @@ public class JwtUtils {
     private static final String SECRET_KEY = "mysecretkeymysecretkeymysecretkeymysecretkey";
     private final Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
     // Token 유효기간 set
-    private final long accessTokenMillis = 1000 * 60;         // 1 hour -> 1분으로 수정(for test)
+    private final long accessTokenMillis = 1000 * 60 * 30;         // 30 minutes
     private final long refreshTokenMillis = 1000 * 60 * 60 * 24 * 7; // 7 days
 
     // JWT 토큰 생성
